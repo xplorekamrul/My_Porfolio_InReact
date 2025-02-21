@@ -1,185 +1,182 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../Global.css'
-import Heading from '../Components/Heading';
-import { Container } from '../Components/Container';
-import Flex from '../Components/Flex';
-import Button from '../Components/Button';
-import Paragraph from '../Components/Paragraph';
-import { FaFileDownload, FaGithub, FaLinkedinIn, FaFacebook } from 'react-icons/fa';
-import { IoLogoWhatsapp } from 'react-icons/io';
-import HeroImag from '../Components/HeroImag';
+// import React, { Component } from 'react';
+// import { Container } from '../Components/Container';
+// import Heading from '../Components/Heading';
+// import Flex from '../Components/Flex';
+// import Paragraph from '../Components/Paragraph';
+// import Button from '../Components/Button';
+// import { FaPhone } from "react-icons/fa6";
+// import { MdEmail, MdLocationPin } from "react-icons/md";
+// import emailjs from 'emailjs-com';
 
-const Home = () => {
-  const [isOpen, setIsOpen] = useState(false); // State to control menu visibility
+// class Contact extends Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             firstname: '',
+//             lastname: '',
+//             email: '',
+//             phone: '',
+//             service: '',
+//             country: '',
+//             message: ''
+//         };
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen); // Toggle the menu open state
-  };
+//         this.handleChange = this.handleChange.bind(this);
+//         this.handleSubmit = this.handleSubmit.bind(this);
+//     }
+
+//     handleChange(e) {
+//         const { name, value } = e.target;
+//         this.setState({ [name]: value });
+//     }
+
+//     handleSubmit(e) {
+//         e.preventDefault();
+
+//         // EmailJS configuration
+//         emailjs
+//             .send(
+//                 'service_d65y0pr', // Replace with your EmailJS Service ID
+//                 'template_zofbxco', // Replace with your EmailJS Template ID
+//                 this.state,
+//                 'TvG0R5xg7N6FM3JUg' // Replace with your EmailJS public key
+//             )
+//             .then(() => {
+//                 alert('Message sent successfully!');
+//                 this.setState({
+//                     firstname: '',
+//                     lastname: '',
+//                     email: '',
+//                     phone: '',
+//                     service: '',
+//                     country: '',
+//                     message: ''
+//                 });
+//             })
+//             .catch((error) => {
+//                 console.error('Failed to send message:', error);
+//                 alert('Failed to send message. Please try again.');
+//             });
+//     }
+
+//     render() {
+//         return (
+//             <section className='py-[50px] bg-blackbg'>
+//                 <Container>
+//                     <Flex className="justify-center pt-10 pb-10">
+//                         <Heading headingName="Let's Co" className="text-center font-ops font-bold text-ff text-[40px] sm:text-[50px] leading-[80px]" />
+//                         <Heading headingName="nnect!" className="text-center font-ops font-bold text-gg text-[40px] sm:text-[50px] leading-[80px]" />
+//                     </Flex>
+//                     <Flex className={'flex-col md:flex-row p-5 xl:p-0 justify-between'}>
+//                         <div className='w-full md:w-[50%] bg-cc px-7 py-10 rounded-xl'>
+//                             <Heading headingName="Let's work togather" className="text-center font-ops font-bold text-gg text-[35px] leading-[60px] sm:text-[40px] md:text-left" />
+//                             <Paragraph
+//                                 pText={'Let’s collaborate to bring your vision to life. I craft dynamic, user-focused designs that make an impact and deliver exceptional results.'}
+//                                 className={'font-pap text-ff text-[16px] leading-[40px] mt-5 text-center md:text-left'}
+//                             />
+//                             <form onSubmit={this.handleSubmit}>
+//                                 <Flex className={'flex-col md:flex-row flex-wrap justify-between'}>
+//                                     {['firstname', 'lastname', 'email', 'phone', 'service', 'country'].map((field, index) => (
+//                                         <input
+//                                             key={index}
+//                                             type={field === 'email' ? 'email' : 'text'}
+//                                             name={field}
+//                                             placeholder={field.replace(/^\w/, c => c.toUpperCase())}
+//                                             value={this.state[field]}
+//                                             onChange={this.handleChange}
+//                                             required
+//                                             className="py-2 mob:w-[70%] sm:w-[70%] lg:w-[45%] pl-[15px] ml-5 mt-5 rounded-lg bg-blackbg custom-placeholder border-2  border-black text-ff focus:border-gg focus:ring-[1px] focus:ring-gg
+//                                                 focus:outline-none focus:ml-0 hover:border-3 hover:border-ff transition-all duration-300 focus:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)]"
+//                                         />
+//                                     ))}
+//                                 </Flex>
+//                                 <textarea
+//                                     name="message"
+//                                     placeholder="Type your text here."
+//                                     value={this.state.message}
+//                                     onChange={this.handleChange}
+//                                     required
+//                                     className='pt-[10px] mob:w-[70%] sm:w-[70%] lg:w-[97%] h-[100px] pl-[15px] ml-5 mt-5 rounded-lg bg-blackbg custom-placeholder border-2 
+//                                         border-black text-ff focus:border-gg focus:ring-[1px] focus:ring-gg focus:outline-none focus:ml-0 hover:border-3 hover:border-ff transition-all duration-300 
+//                                         focus:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)]'
+//                                 ></textarea>
+//                                 <Button
+//                                     btnName={'Send Message'}
+//                                     className={`mt-10 ml-5 font-ops font-semibold text-ff bg-[#504c4c] text-[20px] leading-[30px] px-[20px] py-[10px] border-black hover:border-gg border-2 
+//                                         hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] rounded-xl hover:bg-gg hover:text-black hover:bg-scale-x-0 origin-center  hover:bg-scale-x-100 transition-transform duration-2000 `}
+//                                 />
+//                             </form>
+//                         </div>
+//                         <div className='w-full md:w-[40%] mt-10 md:mt-[200px]'>
+//                             <Flex>
+//                                 <FaPhone className='text-6xl p-5 bg-cc rounded-lg text-gg' />
+//                                 <div className='ml-5'>
+//                                     <Paragraph pText={'Name'} className={'font-ops text-[16px] text-ff '} />
+//                                     <Paragraph pText={'(+88) 0151 6573 530'} className={'font-ops text-[20px] text-ff font-semibold'} />
+//                                 </div>
+//                             </Flex >
+//                             <Flex className={'mt-10'}>
+//                                 <MdEmail className='text-6xl p-5 bg-cc rounded-lg text-gg' />
+//                                 <div className='ml-5'>
+//                                     <Paragraph pText={'Email'} className={'font-ops text-[16px] text-ff '} />
+//                                     <Paragraph pText={'info.mdkamruzzaman.dev@gmail.com'} className={'font-ops text-[20px] text-ff font-semibold md:text-[16px] lg:text-[20px]'} />
+//                                 </div>
+//                             </Flex>
+//                             <Flex className={'mt-10'}>
+//                                 <MdLocationPin className='text-6xl p-5 bg-cc rounded-lg text-gg' />
+//                                 <div className='ml-5'>
+//                                     <Paragraph pText={'Address'} className={'font-ops text-[16px] text-ff '} />
+//                                     <Paragraph pText={'Bangladesh, Jashore (7420).'} className={'font-ops text-[20px] text-ff font-semibold'} />
+//                                 </div>
+//                             </Flex>
+//                         </div>
+//                     </Flex>
+//                 </Container>
+//             </section>
+//         );
+//     }
+// }
+
+// export default Contact;
+import { useEffect } from "react";
+import ScrollSpy from "scrollspyjs";
+
+function Experiment() {
+  useEffect(() => {
+    // Ensure the DOM elements are available before initializing ScrollSpy
+    const spy = new ScrollSpy({
+      nav: '.nav ul',           // Use .nav instead of just nav to avoid confusion
+      sections: '.section',
+      className: 'active',      // Class to add when an element is in the viewport
+      offset: 60,               // Offset for fixed navbar
+    });
+
+    spy.init();
+  }, []); // Empty dependency array ensures this runs once after the component mounts
+
   return (
-    <>
-      {/* header section start  */}
-      <div className='py-4 fixed w-full z-50'>
-        <Container>
-          <Flex className={'justify-between items-center'}>
-            <Heading headingName={'mk.'} className={'mob:ml-5 sm:ml-5 md:ml-5 lg:ml-0 xl:ml-0 font-qw font-bold text-ff text-[80px] leading-[30px]'} />
+    <div className="app">
+      <nav className="nav bg-gray-800 fixed w-full top-0 z-10 py-4">
+        <ul className="flex justify-center space-x-8 text-white">
+          <li><a href="#section1" className="text-lg hover:text-orange-500">Section 1</a></li>
+          <li><a href="#section2" className="text-lg hover:text-orange-500">Section 2</a></li>
+          <li><a href="#section3" className="text-lg hover:text-orange-500">Section 3</a></li>
+        </ul>
+      </nav>
 
-            {/* Toggle Button for mobile */}
-            <button onClick={toggleMenu} className="md:hidden p-2  text-gg ">
-              {isOpen ? (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                </svg>
-              )}
-            </button>
-
-            {/* Menu for larger screens */}
-            <div className={`hidden md:flex md:justify-around w-full md:w-[68%] lg:w-[50%]`}>
-              <Link to="/" className={'pt-2 font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'}
-              >Home</Link>
-              <Link to="/Service" className={'pt-2 font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'}
-              >Services</Link>
-              <Link to="/Resume" className={'pt-2 font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'}
-              >Resume</Link>
-              <Link to="/work" className={'pt-2 font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'}
-              >Work</Link>
-              <Link to="/Contact" className={'pt-2 font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'}
-              >Contact</Link>
-              <Link to="/Contact">
-                <Button btnName={'Hire me'} className={'font-ops font-semibold text-ff hover:text-black text-[20px]  leading-[30px] px-[20px] py-[5px] border-gg hover:bg-gg hover:border-ff border-2  rounded-full hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)]'} />
-              </Link>
-            </div>
-
-            {/* Menu for moballer screens */}
-            {isOpen && (
-              <div className="md:hidden absolute top-16 left-0 w-full bg-blackbg z-50">
-                <Flex className={'flex-col items-center'}>
-                  <Link to="/" className={'font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg py-2 after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'} >
-                    Home</Link>
-                  <Link to="#Service" className={'font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg py-2 after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'} >
-                    Services</Link>
-                  <Link to="/Resume" className={'font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg py-2 after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'} >
-                    Resume</Link>
-                  <Link to="/work" className={'font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg py-2 after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'} >
-                    Work</Link>
-                  <Link to="/Contact" className={'font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg py-2 after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'} >
-                    Contact</Link>
-                  <Link to="/Contact">
-                    <Button btnName={'Hire me'} className={'font-ops font-semibold text-ff hover:text-black text-[20px]  leading-[30px] px-[20px] py-[5px] border-gg hover:border-ff border-2  rounded-full hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)]'} />
-                  </Link>
-                </Flex>
-              </div>
-            )}
-          </Flex>
-        </Container>
+      <div id="section1" className="section h-screen pt-16 bg-orange-400 flex items-center justify-center">
+        <h2 className="text-4xl text-white">Section 1 Content</h2>
       </div>
 
-      {/* hero section */}
-      <div className='py-[50px] bg-blackbg'>
-        <Container>
-          {/* hero section start left part */}
-          <Flex className={'  justify-between mob:flex-col-reverse sm:flex-col-reverse tab:text-[30px]:flex-col-reverse tab:flex-col-reverse md:flex-row '}>
-            <div className='w-[55%] pt-[100px] mob:w-full mob:mt-[50px]  sm:w-full sm:mt-10 sm:px-5 tab:w-full tab:px-8 md:w-[55%]'>
-              <Paragraph pText={'Font-End Developer.'}
-                className={'font-pap font-regular text-ff text-[20px] mob:text-[16px] sm:text-[16px] mob:ml-5  leading-[30px] mob:leading-2 '} />
-
-              <Heading headingName={" Hello I'm "} className={'font-cha font-extrabold text-[80px] mob:text-[50px] sm:text-[60px] md:text-[55px] lg:text-[70px] lg:leading-[80px]  mob:ml-5 text-ff leading-[100px] mob:leading-[60px] sm:leading-[70px] '} />
-              <Heading headingName={" Md Kamruzzaman "} className={'font-cha font-bold text-[80px] mob:text-[50px] sm:text-[60px]  md:text-[55px] lg:text-[70px] lg:leading-[80px] mob:ml-5 text-gg leading-[100px] mob:leading-[50px] sm:leading-[70px] text-3d '} />
-
-              <Paragraph pText={'As a front-end web developer, I specialize in crafting responsive, user-friendly websites that bring ideas to life. Good design creates a great impression and drives business success. Let me help you turn your vision into a digital experience that leaves a lasting impact.'}
-                className={' mob:mt-5 sm:mt-5 font-pap font-regular text-ff text-[16px] text-justify leading-[30px]  pr-[60px] mob:px-5 sm:pr-0'} />
-
-              {/* icons start */}
-              <Flex className={'mt-5 mob:px-5 flex-wrap '}>
-                <a href="../assets/Mdkamruzzaman_Resume.pdf" download="Mdkamruzzaman_Resume.pdf">
-                  <div className='flex mt-5 py-3 px-10 rounded-xl border w-[264px]  hover:bg-gg group hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)]'>
-                    <Button btnName={'Download cv'} className={'font-ops text-[20px] text-gg uppercase font-semibold group-hover:text-black '} />
-                    <FaFileDownload className='text-gg text-[20px] mt-1 ml-3 group-hover:text-black' />
-                  </div>
-                </a>
-                <a href="https://github.com/infomdkamruzzaman" target='_blank'>
-                  <div className='mt-5  p-[8.5px] mob:p-[6.5px] sm:p-[8.5px] border-2 border-gg rounded-[50px] w-[50px] h-[50px] ml-[50px]  mob:ml-[16px] sm:ml-[30px] tab:ml-[50px]  lg:ml-[60px] group hover:border-ff hover:shadow-btnshadow  hover:bg-gg'>
-                    <FaGithub className='text-gg text-[30px] mob:text-[30px] group-hover:text-black' />
-                  </div>
-                </a>
-                <a href="https://www.linkedin.com/in/infomdkamruzzaman/" target='_blank'>
-                  <div className='mt-5 p-[8.5px] mob:p-[6.5px] sm:p-[8.5px] border-2 border-gg rounded-[50px] w-[50px] h-[50px] ml-[20px] mob:ml-[10px] sm:ml-[10px] lg:ml-[20px] group hover:border-ff hover:shadow-btnshadow  hover:bg-gg'>
-                    <FaLinkedinIn className='text-gg text-[30px] mob:text-[30px] group-hover:text-black' />
-                  </div>
-                </a>
-                <a href="https://www.facebook.com/inf0mdkamruzzaman" target='_blank'>
-                  <div className='mt-5 p-[8.5px] mob:p-[6.5px] sm:p-[8.5px] border-2 border-gg rounded-[50px] w-[50px] h-[50px] ml-[20px] mob:ml-[10px] sm:ml-[10px] lg:ml-[20px] group hover:border-ff hover:shadow-btnshadow  hover:bg-gg'>
-                    <FaFacebook className='text-gg text-[30px] mob:text-[30px] group-hover:text-black' />
-                  </div>
-                </a>
-                <a href="https://wa.me/8801516573530" target='_blank'>
-                  <div className='mt-5 p-[8.5px] mob:p-[6.5px] sm:p-[8.5px] border-2 border-gg rounded-[50px] w-[50px] h-[50px] ml-[20px] mob:ml-[10px] sm:ml-[10px] lg:ml-[20px] group hover:border-ff hover:shadow-btnshadow  hover:bg-gg'>
-                    <IoLogoWhatsapp className='text-gg text-[30px] mob:text-[30px] group-hover:text-black' />
-                  </div>
-                </a>
-              </Flex>
-            </div>
-
-            {/* hero section right part start */}
-            <div className='w-[40%] mob:ml-[50px] sm:mx-[90px] tab:mx-auto md:mt-[200px] lg:ml-[70px] lg:mt-[220px] xl:mt-[80px] xl:ml-[150px] xl-w-[30%]'>
-              <HeroImag className={''} />
-            </div>
-          </Flex>
-
-          {/* counter part start  */}
-          <Flex className={'justify-evenly flex-wrap flex-col mt-[50px] px-5 sm:flex-row'}>
-            <Flex className={`w-[250px] mt-10`}>
-              <Heading headingName={'2'} className={`font-cha font-semibold home-stroked-text text-ff text-[60px]  leading-[30px]
-                `} />
-              <span className={`font-ops font-semibold text-ff text-[40px] leading-[0px] pl-3 `} >+</span>
-              <Paragraph pText={`Years of Experience.`} className={`font-ops font-semibold text-ff text-[20px]  leading-[30px]  pl-3 `} />
-            </Flex>
-            <Flex className={`w-[250px] mt-10 `}>
-              <Heading headingName={`12`} className={`font-cha font-semibold home-stroked-text text-ff text-[60px]  leading-[30px]`} />
-              <span className={`font-ops font-semibold text-ff text-[40px] leading-[0px] pl-3 `} >+</span>
-              <Paragraph pText={`Projects Completed.`} className={`font-ops font-semibold text-ff text-[20px] leading-[30px]  pl-3 `} />
-            </Flex>
-            <Flex className={`w-[250px] mt-10 `}>
-              <Heading headingName={`8`} className={`font-cha font-semibold home-stroked-text text-ff text-[60px]  leading-[30px]`} />
-              <span className={`font-ops font-semibold text-ff text-[40px] leading-[0px] pl-3 `} >+</span>
-              <Paragraph pText={`Technologies Mastered.`} className={`font-ops font-semibold text-ff text-[20px] leading-[30px]  pl-3 `} />
-            </Flex>
-            <Flex className={`w-[250px] mt-10 `}>
-              <Heading headingName={`200`} className={`font-cha font-semibold home-stroked-text text-ff text-[60px]  leading-[30px]`} />
-              <span className={`font-ops font-semibold text-ff text-[40px] leading-[0px] pl-3 `} >+</span>
-              <Paragraph pText={`Code Commit.`} className={`font-ops font-semibold text-ff text-[20px]  leading-[30px]  pl-3 `} />
-            </Flex>
-          </Flex>
-        </Container>
+      <div id="section2" className="section h-screen pt-16 bg-teal-600 flex items-center justify-center">
+        <h2 className="text-4xl text-white">Section 2 Content</h2>
       </div>
-    </>
+
+      <div id="section3" className="section h-screen pt-16 bg-red-600 flex items-center justify-center">
+        <h2 className="text-4xl text-white">Section 3 Content</h2>
+      </div>
+    </div>
   );
-};
+}
 
-export default Home;
+export default Experiment;

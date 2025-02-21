@@ -1,3 +1,15 @@
+// instraction 
+
+// take it global css 
+// .custom-cursor {
+//   position: fixed;
+//   pointer-events: none; /* Prevent interaction with the cursor */
+//   border: 2px solid #fff; /* Optional border for visibility */
+//   z-index: 9999; /* Ensure it appears above other elements */
+// }
+
+//then import into app.jsx
+
 import React, { useEffect, useRef } from 'react';
 
 const CustomCursor = () => {

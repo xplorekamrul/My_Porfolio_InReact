@@ -9,6 +9,7 @@ import { FaFileDownload, FaGithub, FaLinkedinIn, FaFacebook } from 'react-icons/
 import { IoLogoWhatsapp } from 'react-icons/io';
 import HeroImag from '../Components/HeroImag';
 import HeroText from '../Components/HeroText';
+import DynamicTextEffect from '../Components/DynamicTextEffect';
 
 const Home = () => {
   return (
@@ -28,7 +29,7 @@ const Home = () => {
 
               {/* icons start */}
               <Flex className={'mt-5 mob:px-5 flex-wrap '}>
-                <a href="../assets/Mdkamruzzaman_Resume.pdf" download="Mdkamruzzaman_Resume.pdf">
+                <a href="../assets/mdkamruzzaman.pdf" download="mdkamruzzaman.pdf">
                   <div className='flex mt-5 hover:mt-3 transition-all duration-300 ease-in  py-3 px-10 rounded-xl border border-gg w-[264px]  hover:bg-gg group hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)]'>
                     <Button btnName={'Download cv'} className={'font-ops text-[20px] text-gg uppercase font-semibold group-hover:text-black '} />
                     <FaFileDownload className='text-gg text-[20px] mt-1 ml-3 group-hover:text-black' />
@@ -58,7 +59,7 @@ const Home = () => {
             </div>
 
             {/* hero section right part start */}
-            <div className='w-[40%] mob:ml-[50px] sm:mx-[90px] tab:mx-auto md:mt-[200px] lg:ml-[70px] lg:mt-[220px] xl:mt-[80px] xl:ml-[150px] xl-w-[30%]'>
+            <div className='w-[40%] mob:ml-[10%] mob:mt-6 sm:mt-6 tab:mx-auto md:mt-[200px] lg:ml-[70px] lg:mt-[220px] xl:mt-[80px] xl:ml-[150px] xl-w-[30%]'>
               <HeroImag className={''} />
             </div>
           </Flex>
@@ -66,23 +67,23 @@ const Home = () => {
           {/* counter part start  */}
           <Flex className={'justify-evenly flex-wrap flex-col mt-[50px] px-5 sm:flex-row'}>
             <Flex className={`w-[250px] mt-10`}>
-              <Heading headingName={'2'} className={`font-cha font-semibold home-stroked-text text-ff text-[60px]  leading-[30px]
+              <DynamicTextEffect textArray={['2']} className={`font-cha font-semibold home-stroked-text text-ff text-[60px]  leading-[30px]
                 `} />
               <span className={`font-ops font-semibold text-ff text-[40px] leading-[0px] pl-3 `} >+</span>
               <Paragraph pText={`Years of Experience.`} className={`font-ops font-semibold text-ff text-[20px]  leading-[30px]  pl-3 `} />
             </Flex>
-            <Flex className={`w-[250px] mt-10 `}>
-              <Heading headingName={`12`} className={`font-cha font-semibold home-stroked-text text-ff text-[60px]  leading-[30px]`} />
+            <Flex className={`w-[298px] mt-10 `}>
+              <DynamicTextEffect textArray={[`12`]} className={`font-cha font-semibold home-stroked-text text-ff text-[60px]  leading-[30px]`} />
               <span className={`font-ops font-semibold text-ff text-[40px] leading-[0px] pl-3 `} >+</span>
               <Paragraph pText={`Projects Completed.`} className={`font-ops font-semibold text-ff text-[20px] leading-[30px]  pl-3 `} />
             </Flex>
             <Flex className={`w-[250px] mt-10 `}>
-              <Heading headingName={`8`} className={`font-cha font-semibold home-stroked-text text-ff text-[60px]  leading-[30px]`} />
+              <DynamicTextEffect textArray={[`8`]} className={`font-cha font-semibold home-stroked-text text-ff text-[60px]  leading-[30px]`} />
               <span className={`font-ops font-semibold text-ff text-[40px] leading-[0px] pl-3 `} >+</span>
               <Paragraph pText={`Technologies Mastered.`} className={`font-ops font-semibold text-ff text-[20px] leading-[30px]  pl-3 `} />
             </Flex>
-            <Flex className={`w-[250px] mt-10 `}>
-              <Heading headingName={`200`} className={`font-cha font-semibold home-stroked-text text-ff text-[60px]  leading-[30px]`} />
+            <Flex className={`w-[295px] mt-10 `}>
+              <DynamicTextEffect textArray={['200']} className={`font-cha font-semibold home-stroked-text text-ff text-[60px]  leading-[30px]`} />
               <span className={`font-ops font-semibold text-ff text-[40px] leading-[0px] pl-3 `} >+</span>
               <Paragraph pText={`Code Commit.`} className={`font-ops font-semibold text-ff text-[20px]  leading-[30px]  pl-3 `} />
             </Flex>

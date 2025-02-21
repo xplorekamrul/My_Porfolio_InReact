@@ -30,7 +30,7 @@ const HeroImag = () => {
                     }}
 
                     className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] absolute z-10">
-                    <Image imgSrc={image} priority quality={100} fill className={'object-contain w-[250px]  xl:mt-[108px]  xl:ml-[22.5px] ml-[22.5px] mt-2'} />
+                    <Image imgSrc={image} priority quality={100} fill className={'object-contain w-[250px]  xl:mt-[108px] ml-[22.5px] mt-2'} />
                 </motion.div>
                 {/* circle */}
                 <motion.svg

@@ -1,0 +1,53 @@
+%!Adobe-FontList 1.23
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Reey-Regular
+FamilyName:Reey
+StyleName:Regular
+FullName:Reey Regular
+MenuName:Reey
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\Desktop\My_Porfolio_InReact\src\assets\Font\Reey Regular 400.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:93076
+FileModTime:1727625782
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Reey Regular
+NameArray:0,Win,1,Reey
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Reey-Regular
+FamilyName:Reey
+StyleName:Regular
+FullName:Reey Regular
+MenuName:Reey
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\Desktop\My_Porfolio_InReact\src\assets\Font\Reey-Regular.woff2
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:93076
+FileModTime:1724735429
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Reey Regular
+NameArray:0,Win,1,Reey
+%EndFont
+
