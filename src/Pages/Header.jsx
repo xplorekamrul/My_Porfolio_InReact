@@ -88,7 +88,7 @@ const Header = () => {
                       Contact</Link>
                     <Link to="/Contact">
                       <Button btnName={'Hire me'} className={'font-ops font-semibold text-ff hover:text-black text-[20px]  leading-[30px] px-[20px] py-[5px] border-gg hover:bg-gg hover:border-gg border-2  rounded-full hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)]'} />
-                    </a>
+                    </Link>
                   </Flex>
                 </div>
               )}
