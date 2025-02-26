@@ -10,7 +10,6 @@ import { IoLogoWhatsapp } from 'react-icons/io';
 import HeroImag from '../Components/HeroImag';
 import HeroText from '../Components/HeroText';
 import DynamicTextEffect from '../Components/DynamicTextEffect';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (

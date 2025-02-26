@@ -78,3 +78,16 @@
 .shake-initial {
   animation: shake 2s ease-in-out forwards;
 }
+
+
+.menu-link {
+  @apply pt-2 font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer;
+}
+
+.menu-link-mobile {
+  @apply font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg py-2 after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer;
+}
+
+.button-style {
+  @apply font-ops font-semibold text-ff hover:text-black text-[20px] leading-[30px] px-[20px] py-[5px] border-gg hover:bg-gg hover:border-gg border-2 rounded-full hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)];
+}

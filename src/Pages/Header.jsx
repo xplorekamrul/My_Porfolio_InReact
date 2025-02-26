@@ -1,8 +1,8 @@
-import React, { useState } from 'react'; // Import useState from React
-import Heading from '../Components/Heading';
-import { Container } from '../Components/Container';
-import Flex from '../Components/Flex';
-import Button from '../Components/Button';
+import React, { useState } from "react"; // Import useState from React
+import Heading from "../Components/Heading";
+import { Container } from "../Components/Container";
+import Flex from "../Components/Flex";
+import Button from "../Components/Button";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false); // State to control menu visibility
@@ -12,13 +12,20 @@ const Header = () => {
   };
 
   return (
-    <div className="header">
+    <div className="header relative">
       <nav>
-       {/* header section start  */}
-        <div className='pt-5 bg-blackbg fixed w-full z-50'>
+        {/* Header section start */}
+        <div className="pt-5 bg-black fixed w-full z-50">
           <Container>
-            <Flex className={'justify-between items-center'}>
-              <Heading headingName={'mk.'} className={'mob:ml-5 sm:ml-5 md:ml-5 lg:ml-0 xl:ml-0 font-qw font-bold text-ff text-[80px] leading-[30px]'} />
+            <Flex className={"justify-between items-center"}>
+              <a href="#home">
+                <Heading
+                  headingName={"mk."}
+                  className={
+                    "mob:ml-5 sm:ml-5 md:ml-5 lg:ml-0 xl:ml-0 font-qw font-bold text-ff text-[80px] leading-[30px]"
+                  }
+                />
+              </a>
 
               {/* Toggle Button for mobile */}
               <button onClick={toggleMenu} className="md:hidden p-2 text-gg">
@@ -56,42 +63,57 @@ const Header = () => {
               </button>
 
               {/* Menu for larger screens */}
-              <div className={`hidden md:flex md:justify-around w-full md:w-[68%] lg:w-[50%]`}>
-                <a href="#home"  className={'pt-2 font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'}
-                >Home</a>
-                <a href="#service"  className={'pt-2 font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'}
-                >Services</a>
-                <a href="#resume"  className={'pt-2 font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'}
-                >Resume</a>
-                <a href="#work"  className={'pt-2 font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'}
-                >Work</a>
-                <a href="#contact"  className={'pt-2 font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'}
-                >Contact</a>
-                <a href="#contact" >
-                  <Button btnName={'Hire me'} className={'font-ops font-semibold text-ff hover:text-black text-[20px]  leading-[30px] px-[20px] py-[5px] border-gg hover:bg-gg hover:border-gg border-2  rounded-full hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)]'} />
+              <div className="hidden md:flex md:justify-around w-full md:w-[68%] lg:w-[50%]">
+                {/* menu-link are global css classes  */}
+                <a href="#home" className="menu-link">
+                  Home
+                </a>
+                <a href="#service" className="menu-link">
+                  Services
+                </a>
+                <a href="#resume" className="menu-link">
+                  Resume
+                </a>
+                <a href="#work" className="menu-link">
+                  Work
+                </a>
+                <a href="#contact" className="menu-link">
+                  Contact
+                </a>
+                <a href="#contact">
+                  <Button btnName="Hire me" className="button-style" />
                 </a>
               </div>
- 
+
               {/* Menu for mobile screens */}
-              {isOpen && (
-                <div className="md:hidden absolute top-16 right-5 w-[40%] pb-[50px] pt-5 bg-cc border-2 border-gg rounded-lg hover:right-5 z-50 shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] ">
-                  <Flex className={'flex-col items-center '}>
-                    <Link to="/" className={'font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg py-2 after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'} >
-                      Home</Link>
-                    <Link to="/Service" className={'font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg py-2 after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'} >
-                      Services</Link>
-                    <Link to="/Resume" className={'font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg py-2 after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'} >
-                      Resume</Link>
-                    <Link to="/work" className={'font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg py-2 after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'} >
-                      Work</Link>
-                    <Link to="/Contact" className={'font-ops font-semibold text-ff text-[20px] leading-[30px] hover:text-gg py-2 after:block after:w-[100%] after:h-[3px] after:rounded-lg after:bg-gg after:mt-1 after:scale-x-0 hover:after:scale-x-100 after:origin-center after:transition-transform after:duration-500 cursor-pointer'} >
-                      Contact</Link>
-                    <Link to="/Contact">
-                      <Button btnName={'Hire me'} className={'font-ops font-semibold text-ff hover:text-black text-[20px]  leading-[30px] px-[20px] py-[5px] border-gg hover:bg-gg hover:border-gg border-2  rounded-full hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)]'} />
-                    </Link>
-                  </Flex>
-                </div>
-              )}
+              <div
+                className={`md:hidden absolute top-16 right-5 w-[40%] pb-[50px] pt-5 bg-black border-2 border-gg rounded-lg z-50 shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] ${
+                  isOpen ? "block" : "hidden"
+                }`}
+              >
+                <Flex className={"flex-col items-center"}>
+                  {/* menu-link-mobile are global css classes  */}
+
+                  <a href="#home" className="menu-link-mobile">
+                    Home
+                  </a>
+                  <a href="#service" className="menu-link-mobile">
+                    Services
+                  </a>
+                  <a href="#resume" className="menu-link-mobile">
+                    Resume
+                  </a>
+                  <a href="#work" className="menu-link-mobile">
+                    Work
+                  </a>
+                  <a href="#contact" className="menu-link-mobile">
+                    Contact
+                  </a>
+                  <a href="#contact">
+                    <Button btnName="Hire me" className="button-style" />
+                  </a>
+                </Flex>
+              </div>
             </Flex>
           </Container>
         </div>
@@ -101,5 +123,3 @@ const Header = () => {
 };
 
 export default Header;
-
-//<Scrollspy items={ ['home', 'service', 'resume','work','contact'] } currentClassName="is-current">
