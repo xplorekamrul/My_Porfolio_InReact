@@ -71,7 +71,7 @@ const Header = () => {
                   <Button btnName={'Hire me'} className={'font-ops font-semibold text-ff hover:text-black text-[20px]  leading-[30px] px-[20px] py-[5px] border-gg hover:bg-gg hover:border-gg border-2  rounded-full hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)]'} />
                 </a>
               </div>
-
+ 
               {/* Menu for mobile screens */}
               {isOpen && (
                 <div className="md:hidden absolute top-16 right-5 w-[40%] pb-[50px] pt-5 bg-cc border-2 border-gg rounded-lg hover:right-5 z-50 shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] ">

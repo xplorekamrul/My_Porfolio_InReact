@@ -61,7 +61,7 @@ class Contact extends Component {
 
     render() {
         return (
-            <section className='py-[50px] bg-blackbg'>
+            <section className='py-[50px] bg-blackbg' id='contact'>
                 <Container>
                     <Flex className="justify-center pt-10 pb-10">
                         <Heading headingName="Let's Co" className="text-center font-ops font-bold text-ff text-[40px] sm:text-[50px] leading-[80px]" />

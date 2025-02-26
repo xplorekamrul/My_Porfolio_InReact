@@ -217,7 +217,7 @@ const Resume = () => {
 
     return (
         <>
-            <section className='py-[50px] bg-blackbg'>
+            <section className='py-[50px] bg-blackbg' id='resume'>
                 <Container>
 
                     <Flex className={'justify-center pb-[100px] mt-10'}>

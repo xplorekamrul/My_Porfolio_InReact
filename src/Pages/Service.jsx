@@ -10,10 +10,10 @@ import { Link } from 'react-router-dom'
 const Service = () => {
     return (
         <>
-            <div className='bg-blackbg py-[50px] '>
+            <div className='bg-blackbg py-[50px] ' id="service">
                 <Container>
                     <Flex className={'justify-center mt-10'}>
-                        <Heading id="service" headingName={'My Ser'} className={'text-center font-ops font-bold text-ff  md:text-[50px] text-[40px]  leading-[80px] '} />
+                        <Heading  headingName={'My Ser'} className={'text-center font-ops font-bold text-ff  md:text-[50px] text-[40px]  leading-[80px] '} />
                         <Heading headingName={'vices.'} className={'text-center font-ops font-bold text-gg  md:text-[50px] text-[40px]  leading-[80px] '} />
                     </Flex>
                     <Flex className={'justify-between flex-wrap mt-[80px] mob:flex-col sm:flex-col md:flex-row'}>

@@ -52,7 +52,7 @@ const Work = () => {
   };
 
   return (
-    <div className="relative bg-blackbg">
+    <div className="relative bg-blackbg" id='work'>
       {/* Scroll left button */}
       <button
         onClick={() => scroll('left')}

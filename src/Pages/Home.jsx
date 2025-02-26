@@ -10,12 +10,13 @@ import { IoLogoWhatsapp } from 'react-icons/io';
 import HeroImag from '../Components/HeroImag';
 import HeroText from '../Components/HeroText';
 import DynamicTextEffect from '../Components/DynamicTextEffect';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <>
       {/* hero section */}
-      <div className='py-[50px] bg-blackbg'>
+      <div className='py-[50px] bg-blackbg' id='home'>
         <Container>
           {/* hero section start left part */}
           <Flex className={'  justify-between mob:flex-col-reverse sm:flex-col-reverse tab:text-[30px]:flex-col-reverse tab:flex-col-reverse md:flex-row '}>
@@ -29,23 +30,23 @@ const Home = () => {
 
               {/* icons start */}
               <Flex className={'mt-5 mob:px-5 flex-wrap '}>
-                <a href="../assets/mdkamruzzaman.pdf" download="mdkamruzzaman.pdf">
-                  <div className='flex mt-5 hover:mt-3 transition-all duration-300 ease-in  py-3 px-10 rounded-xl border border-gg w-[264px]  hover:bg-gg group hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)]'>
+              <a href="/mdkamruzzaman.pdf" download="/mdkamruzzaman.pdf">
+              <div className='flex mt-5 hover:mt-3 transition-all duration-300 ease-in  py-3 px-10 rounded-xl border border-gg w-[264px]  hover:bg-gg group hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)]'>
                     <Button btnName={'Download cv'} className={'font-ops text-[20px] text-gg uppercase font-semibold group-hover:text-black '} />
                     <FaFileDownload className='text-gg text-[20px] mt-1 ml-3 group-hover:text-black' />
                   </div>
                 </a>
-                <a href="https://github.com/infomdkamruzzaman" target='_blank'>
+                <a href="https://github.com/xplorekamrul" target='_blank'>
                   <div className='mt-5  p-[8.5px] mob:p-[6.5px] sm:p-[8.5px] border-2 border-gg rounded-[50px] w-[50px] h-[50px] ml-[50px]  mob:ml-[16px] sm:ml-[30px] tab:ml-[50px]  lg:ml-[60px] group hover:border-gg hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] hover:mt-3 transition-all duration-300 ease-in hover:bg-gg'>
                     <FaGithub className='text-gg text-[30px] mob:text-[30px] group-hover:text-black' />
                   </div>
                 </a>
-                <a href="https://www.linkedin.com/in/infomdkamruzzaman/" target='_blank'>
+                <a href="https://www.linkedin.com/in/xplorekamrul/" target='_blank'>
                   <div className='mt-5 p-[8.5px] mob:p-[6.5px] sm:p-[8.5px] border-2 border-gg rounded-[50px] w-[50px] h-[50px] ml-[20px] mob:ml-[10px] sm:ml-[10px] lg:ml-[20px] group hover:border-gg hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] hover:mt-3 transition-all duration-300 ease-in hover:bg-gg'>
                     <FaLinkedinIn className='text-gg text-[30px] mob:text-[30px] group-hover:text-black' />
                   </div>
                 </a>
-                <a href="https://www.facebook.com/inf0mdkamruzzaman" target='_blank'>
+                <a href="https://www.facebook.com/xplorekamrul" target='_blank'>
                   <div className='mt-5 p-[8.5px] mob:p-[6.5px] sm:p-[8.5px] border-2 border-gg rounded-[50px] w-[50px] h-[50px] ml-[20px] mob:ml-[10px] sm:ml-[10px] lg:ml-[20px] group hover:border-gg hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] hover:mt-3 transition-all duration-300 ease-in hover:bg-gg'>
                     <FaFacebook className='text-gg text-[30px] mob:text-[30px] group-hover:text-black' />
                   </div>

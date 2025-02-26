@@ -16,7 +16,7 @@ const Rasume = () => {
     };
     return (
         <>
-            <section className='py-[50px] bg-blackbg'>
+            <section className='py-[50px] bg-blackbg' id='resume'>
                 <Container>
                     <Flex className={'justify-center pb-10'}>
                         <Heading headingName={'My De'} className={'text-center font-ops font-bold text-ff text-[50px] leading-[80px] '} />
