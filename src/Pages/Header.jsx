@@ -6,23 +6,26 @@ import Button from "../Components/Button";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef(null); // Ref for detecting outside clicks
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
-  // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsOpen(false); // Close menu
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
       }
     };
 
-    // Add event listener
     document.addEventListener("mousedown", handleClickOutside);
-
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -31,7 +34,6 @@ const Header = () => {
   return (
     <div className="header relative">
       <nav>
-        {/* Header section start */}
         <div className="pt-5 bg-black fixed w-full z-50">
           <Container>
             <Flex className="justify-between items-center">
@@ -43,7 +45,11 @@ const Header = () => {
               </a>
 
               {/* Toggle Button for mobile */}
-              <button onClick={toggleMenu} className="md:hidden p-2 text-gg">
+              <button
+                ref={buttonRef}
+                onClick={toggleMenu}
+                className="md:hidden p-2 text-gg"
+              >
                 {isOpen ? (
                   <svg
                     className="w-6 h-6"
@@ -79,7 +85,6 @@ const Header = () => {
 
               {/* Menu for larger screens */}
               <div className="hidden md:flex md:justify-around w-full md:w-[68%] lg:w-[50%]">
-                {/* menu-link in global css file */}
                 <a href="#home" className="menu-link">
                   Home
                 </a>
@@ -100,29 +105,50 @@ const Header = () => {
                 </a>
               </div>
 
-              {/* Mobile Menu */}
+              {/* Mobile Menu with Fade Animation */}
               <div
-                ref={menuRef} // Ref added here
-                className={`md:hidden absolute top-16 right-5 w-[40%] pb-[50px] pt-5 bg-black border-2 border-gg rounded-lg z-50 shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] ${
-                  isOpen ? "block" : "hidden"
+                ref={menuRef}
+                className={`md:hidden absolute top-16 right-5 w-[40%] pb-[50px] pt-5 bg-black border-2 border-gg rounded-lg z-50 shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] 
+                transition-all duration-300 ease-in-out transform ${
+                  isOpen
+                    ? "opacity-100 translate-y-0 scale-100"
+                    : "opacity-0 translate-y-[-10px] scale-95 pointer-events-none"
                 }`}
               >
                 <Flex className="flex-col items-center">
-                  {/* menu-link-mobile in global css file */}
-
-                  <a href="#home" className="menu-link-mobile">
+                  <a
+                    href="#home"
+                    className="menu-link-mobile"
+                    onClick={() => setIsOpen(false)}
+                  >
                     Home
                   </a>
-                  <a href="#service" className="menu-link-mobile">
+                  <a
+                    href="#service"
+                    className="menu-link-mobile"
+                    onClick={() => setIsOpen(false)}
+                  >
                     Services
                   </a>
-                  <a href="#resume" className="menu-link-mobile">
+                  <a
+                    href="#resume"
+                    className="menu-link-mobile"
+                    onClick={() => setIsOpen(false)}
+                  >
                     Resume
                   </a>
-                  <a href="#work" className="menu-link-mobile">
+                  <a
+                    href="#work"
+                    className="menu-link-mobile"
+                    onClick={() => setIsOpen(false)}
+                  >
                     Work
                   </a>
-                  <a href="#contact" className="menu-link-mobile">
+                  <a
+                    href="#contact"
+                    className="menu-link-mobile"
+                    onClick={() => setIsOpen(false)}
+                  >
                     Contact
                   </a>
                   <a href="#contact">
