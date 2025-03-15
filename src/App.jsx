@@ -6,6 +6,7 @@ import Work from './Pages/Work';
 import Contact from './Pages/Contact';
 import Header from './Pages/Header';
 import CustomCursor from './Components/CustomCursor';
+import BackToTopButton from './Components/backToTop';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
 
         {/* Custom Cursor */}
         <CustomCursor />
-
+        <BackToTopButton/>
         {/* Sections */}
         <Home />
         <Service />
