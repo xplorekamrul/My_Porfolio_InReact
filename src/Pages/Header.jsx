@@ -5,27 +5,35 @@ import Flex from "../Components/Flex";
 import Button from "../Components/Button";
 
 const Header = () => {
+  // State to manage the menu open/close state
   const [isOpen, setIsOpen] = useState(false);
+
+  // Refs for detecting outside clicks
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
 
+  // Function to toggle the menu open/close
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
 
+  // Effect to close the menu when clicking outside of it
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target)
+        menuRef.current && // Menu reference exists
+        !menuRef.current.contains(event.target) && // Click is outside menu
+        buttonRef.current && // Button reference exists
+        !buttonRef.current.contains(event.target) // Click is outside button
       ) {
-        setIsOpen(false);
+        setIsOpen(false); // Close the menu
       }
     };
 
+    // Add event listener when component mounts
     document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup function to remove event listener when component unmounts
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -34,9 +42,11 @@ const Header = () => {
   return (
     <div className="header relative">
       <nav>
+        {/* Fixed navigation bar at the top */}
         <div className="pt-5 bg-black fixed w-full z-50">
           <Container>
             <Flex className="justify-between items-center">
+              {/* Logo / Brand Name */}
               <a href="#home">
                 <Heading
                   headingName={"mk."}
@@ -44,12 +54,13 @@ const Header = () => {
                 />
               </a>
 
-              {/* Toggle Button for mobile */}
+              {/* Toggle Button for Mobile */}
               <button
-                ref={buttonRef}
-                onClick={toggleMenu}
+                ref={buttonRef} // Reference for click detection
+                onClick={toggleMenu} // Calls toggle function
                 className="md:hidden p-2 text-gg"
               >
+                {/* If menu is open, show "X" icon, otherwise show menu bars */}
                 {isOpen ? (
                   <svg
                     className="w-6 h-6"
@@ -83,74 +94,35 @@ const Header = () => {
                 )}
               </button>
 
-              {/* Menu for larger screens */}
+              {/* Menu for larger screens (always visible on medium+ screens) */}
               <div className="hidden md:flex md:justify-around w-full md:w-[68%] lg:w-[50%]">
-                <a href="#home" className="menu-link">
-                  Home
-                </a>
-                <a href="#service" className="menu-link">
-                  Services
-                </a>
-                <a href="#resume" className="menu-link">
-                  Resume
-                </a>
-                <a href="#work" className="menu-link">
-                  Work
-                </a>
-                <a href="#contact" className="menu-link">
-                  Contact
-                </a>
+                <a href="#home" className="menu-link">Home</a>
+                <a href="#service" className="menu-link">Services</a>
+                <a href="#resume" className="menu-link">Resume</a>
+                <a href="#work" className="menu-link">Work</a>
+                <a href="#contact" className="menu-link">Contact</a>
                 <a href="#contact">
                   <Button btnName="Hire me" className="button-style" />
                 </a>
               </div>
 
-              {/* Mobile Menu with Fade Animation */}
+              {/* Mobile Menu (Visible only when isOpen is true) */}
               <div
-                ref={menuRef}
+                ref={menuRef} // Reference for click detection
                 className={`md:hidden absolute top-16 right-5 w-[40%] pb-[50px] pt-5 bg-black border-2 border-gg rounded-lg z-50 shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] 
-                transition-all duration-300 ease-in-out transform ${
+                transition-all duration-[1000ms] ease-in-out transform ${
                   isOpen
-                    ? "opacity-100 translate-y-0 scale-100"
-                    : "opacity-0 translate-y-[-10px] scale-95 pointer-events-none"
+                    ? "opacity-100 translate-y-0 scale-100" // Fade in and drop from top when opening
+                    : "opacity-0 -translate-y-[50px] scale-95 pointer-events-none" // Fade out and move up when closing
                 }`}
               >
                 <Flex className="flex-col items-center">
-                  <a
-                    href="#home"
-                    className="menu-link-mobile"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Home
-                  </a>
-                  <a
-                    href="#service"
-                    className="menu-link-mobile"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Services
-                  </a>
-                  <a
-                    href="#resume"
-                    className="menu-link-mobile"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Resume
-                  </a>
-                  <a
-                    href="#work"
-                    className="menu-link-mobile"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Work
-                  </a>
-                  <a
-                    href="#contact"
-                    className="menu-link-mobile"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Contact
-                  </a>
+                  {/* Clicking a menu item closes the menu */}
+                  <a href="#home" className="menu-link-mobile" onClick={() => setIsOpen(false)}>Home</a>
+                  <a href="#service" className="menu-link-mobile" onClick={() => setIsOpen(false)}>Services</a>
+                  <a href="#resume" className="menu-link-mobile" onClick={() => setIsOpen(false)}>Resume</a>
+                  <a href="#work" className="menu-link-mobile" onClick={() => setIsOpen(false)}>Work</a>
+                  <a href="#contact" className="menu-link-mobile" onClick={() => setIsOpen(false)}>Contact</a>
                   <a href="#contact">
                     <Button btnName="Hire me" className="button-style" />
                   </a>
