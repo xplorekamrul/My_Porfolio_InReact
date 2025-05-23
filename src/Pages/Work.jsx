@@ -12,6 +12,46 @@ import slider2 from '../assets/slider content(2).jpg';
 import slider3 from '../assets/slider content(3).png';
 import slider4 from '../assets/slider content(4).png';
 
+// Array of project objects
+const projects = [
+  {
+    id: "01",
+    title: "Frontend Project",
+    description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
+    technologies: "HTML5, CSS3, JavaScript.",
+    liveLink: "https://infomdkamruzzaman.github.io/furniro-E-website/",
+    githubLink: "https://github.com/infomdkamruzzaman/furniro-E-website",
+    image: slider1,
+  },
+  {
+    id: "02",
+    title: "E-Commerse Project",
+    description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
+    technologies: "HTML5, CSS3, JavaScript.",
+    liveLink: "https://infomdkamruzzaman.github.io/E-commers-website/",
+    githubLink: "https://github.com/infomdkamruzzaman/E-commers-website",
+    image: slider2,
+  },
+  {
+    id: "03",
+    title: "E-Commerse with React",
+    description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
+    technologies: "Vite.js, Tailwind Css.",
+    liveLink: "https://infomdkamruzzaman.github.io/Agenc_website/",
+    githubLink: "https://github.com/infomdkamruzzaman/Agenc_website",
+    image: slider3,
+  },
+  {
+    id: "04",
+    title: "portfolio Project",
+    description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
+    technologies: "HTML, CSS, Javascript.",
+    liveLink: "https://infomdkamruzzaman.github.io/My_Portfolio/",
+    githubLink: "https://github.com/infomdkamruzzaman/My_Portfolio",
+    image: slider4,
+  },
+];
+
 const Work = () => {
   const scrollerRef = useRef(null);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -21,11 +61,11 @@ const Work = () => {
     const scrollInterval = setInterval(() => {
       if (scrollerRef.current) {
         scrollerRef.current.scrollBy({
-          left: 300, // Horizontal scroll on all screen sizes
-          behavior: 'smooth'
+          left: 300,
+          behavior: 'smooth',
         });
       }
-    }, 2000000); // Adjust interval to your needs
+    }, 2000000);
 
     return () => clearInterval(scrollInterval);
   }, []);
@@ -33,7 +73,7 @@ const Work = () => {
   // Check screen size
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 640); // Treat small screens (below 640px)
+      setIsSmallScreen(window.innerWidth < 640);
     };
 
     handleResize();
@@ -45,8 +85,8 @@ const Work = () => {
   const scroll = (direction) => {
     if (scrollerRef.current) {
       scrollerRef.current.scrollBy({
-        left: direction === 'left' ? -300 : 300, // Always scroll horizontally
-        behavior: 'smooth'
+        left: direction === 'left' ? -300 : 300,
+        behavior: 'smooth',
       });
     }
   };
@@ -56,7 +96,7 @@ const Work = () => {
       {/* Scroll left button */}
       <button
         onClick={() => scroll('left')}
-        className="absolute right-[38%] md:right-[32%] lg:right-[30%] bottom-8  transform -translate-y-1/2  bg-gg text-black p-3 rounded-md z-10"
+        className="absolute right-[38%] md:right-[32%] lg:right-[30%] bottom-8 transform -translate-y-1/2 bg-gg text-black p-3 rounded-md z-10"
       >
         <FaChevronLeft />
       </button>
@@ -70,243 +110,80 @@ const Work = () => {
         {/* Scroller */}
         <div
           ref={scrollerRef}
-          className={`flex custom-scrollbar overflow-x-auto pb-[100px] space-x-4 scrollbar-hide p-4 bg-blackbg rounded-lg shadow-lg w-full`}
+          className="flex custom-scrollbar overflow-x-auto pb-[100px] space-x-4 scrollbar-hide p-4 bg-blackbg rounded-lg shadow-lg w-full"
           style={{ scrollSnapType: 'x mandatory', maxWidth: '100%' }}
         >
-          {/* Slider 1 */}
-          <div
-            className="min-w-[100%] bg-blackbg p-4 rounded-lg transition-transform"
-            style={{ scrollSnapAlign: 'start' }}
-          >
-            <Flex
-              className={`justify-between flex-wrap ${isSmallScreen ? 'flex-col-reverse' : 'flex-row'}`}
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="min-w-[100%] bg-blackbg p-4 rounded-lg transition-transform"
+              style={{ scrollSnapAlign: 'start' }}
             >
-              <div className="w-full md:w-[40%]">
-                <Paragraph
-                  pText="01"
-                  className="font-cha font-bold text-[50px] service-stroked-text leading-[80px] text-transparent group-hover:text-hover"
-                />
-                <Heading headingName="Frontend Project" className="font-ops font-bold text-ff hover:text-gg text-[30px] sm:text-[40px] leading-[40px]" />
-                <Paragraph
-                  pText="Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices."
-                  className="font-pap text-ff text-[16px] leading-[40px] mt-5"
-                />
-                <Paragraph pText="HTML5, CSS3, JavaScript." className="font-pap text-gg text-[16px] leading-[40px] pb-5 border-b-2 border-b-ff" />
+              <Flex
+                className={`justify-between flex-wrap ${isSmallScreen ? 'flex-col-reverse' : 'flex-row'}`}
+              >
+                <div className="w-full md:w-[40%]">
+                  <Paragraph
+                    pText={project.id}
+                    className="font-cha font-bold text-[50px] service-stroked-text leading-[80px] text-transparent group-hover:text-hover"
+                  />
+                  <Heading
+                    headingName={project.title}
+                    className="font-ops font-bold text-ff hover:text-gg text-[30px] sm:text-[40px] leading-[40px]"
+                  />
+                  <Paragraph
+                    pText={project.description}
+                    className="font-pap text-ff text-[16px] leading-[40px] mt-5"
+                  />
+                  <Paragraph
+                    pText={project.technologies}
+                    className="font-pap text-gg text-[16px] leading-[40px] pb-5 border-b-2 border-b-ff"
+                  />
 
-                <Flex className="mt-5">
-                  <TooltipProvider delayDuration={20}>
-                    <Tooltip>
-                      <TooltipTrigger className="h-[60px] w-[60px] bg-cc rounded-full group">
-                        <a href="https://infomdkamruzzaman.github.io/furniro-E-website/" target='_blank'>
-                          <BsArrowDownRight className="text-4xl group-hover:text-gg transition-all duration-300 text-ff mx-auto group-hover:-rotate-90" />
-                        </a>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <Paragraph pText="Live Project" className="bg-white text-black px-8 py-3 rounded-xl text-[20px] font-pap font-semibold mb-5" />
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+                  <Flex className="mt-5">
+                    <TooltipProvider delayDuration={20}>
+                      <Tooltip>
+                        <TooltipTrigger className="h-[60px] w-[60px] bg-cc rounded-full group">
+                          <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                            <BsArrowDownRight className="text-4xl group-hover:text-gg transition-all duration-300 text-ff mx-auto group-hover:-rotate-90" />
+                          </a>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <Paragraph
+                            pText="Live Project"
+                            className="bg-white text-black px-8 py-3 rounded-xl text-[20px] font-pap font-semibold mb-5"
+                          />
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
 
-                  <TooltipProvider delayDuration={20}>
-                    <Tooltip>
-                      <TooltipTrigger className="h-[60px] w-[60px] bg-cc rounded-full group ml-10">
-                        <a href="https://github.com/infomdkamruzzaman/furniro-E-website" target='_blank'>
-                          <FaGithub className="text-4xl group-hover:text-gg transition-all duration-300 text-ff mx-auto" />
-                        </a>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <Paragraph pText="Source Code" className="bg-white text-black px-8 py-3 rounded-xl text-[20px] font-pap font-semibold mb-5" />
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Flex>
-              </div>
-
-              {/* photo Div */}
-              <div className="w-full md:w-[50%] h-[450px]  mt-10 md:mt-0">
-                {/* Vertical content inside */}
-                <div className="h-full flex flex-col justify-center items-center">
-                  <Image imgSrc={slider1} className={'w-full h-full rounded-xl'} />
+                    <TooltipProvider delayDuration={20}>
+                      <Tooltip>
+                        <TooltipTrigger className="h-[60px] w-[60px] bg-cc rounded-full group ml-10">
+                          <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                            <FaGithub className="text-4xl group-hover:text-gg transition-all duration-300 text-ff mx-auto" />
+                          </a>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <Paragraph
+                            pText={project.title === "portfolio Project" ? "GitHub Projects" : "Source Code"}
+                            className="bg-white text-black px-8 py-3 rounded-xl text-[20px] font-pap font-semibold mb-5"
+                          />
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Flex>
                 </div>
-              </div>
-            </Flex>
-          </div>
-          {/* Slider 2 */}
-          <div
-            className="min-w-[100%] bg-blackbg p-4 rounded-lg transition-transform"
-            style={{ scrollSnapAlign: 'start' }}
-          >
-            <Flex
-              className={`justify-between flex-wrap ${isSmallScreen ? 'flex-col-reverse' : 'flex-row'}`}
-            >
-              <div className="w-full md:w-[40%]">
-                <Paragraph
-                  pText="02"
-                  className="font-cha font-bold text-[50px] service-stroked-text leading-[80px] text-transparent group-hover:text-hover"
-                />
-                <Heading headingName="E-Commerse Project" className="font-ops font-bold text-ff hover:text-gg text-[30px] sm:text-[40px] leading-[40px]" />
-                <Paragraph
-                  pText="Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices."
-                  className="font-pap text-ff text-[16px] leading-[40px] mt-5"
-                />
-                <Paragraph pText="HTML5, CSS3, JavaScript." className="font-pap text-gg text-[16px] leading-[40px] pb-5 border-b-2 border-b-ff" />
 
-                <Flex className="mt-5">
-                  <TooltipProvider delayDuration={20}>
-                    <Tooltip>
-                      <TooltipTrigger className="h-[60px] w-[60px] bg-cc rounded-full group">
-                        <a href="https://infomdkamruzzaman.github.io/E-commers-website/" target='_blank'>
-                          <BsArrowDownRight className="text-4xl group-hover:text-gg transition-all duration-300 text-ff mx-auto group-hover:-rotate-90" />
-                        </a>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <Paragraph pText="Live Project" className="bg-white text-black px-8 py-3 rounded-xl text-[20px] font-pap font-semibold mb-5" />
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-
-                  <TooltipProvider delayDuration={20}>
-                    <Tooltip>
-                      <TooltipTrigger className="h-[60px] w-[60px] bg-cc rounded-full group ml-10">
-                        <a href="https://github.com/infomdkamruzzaman/E-commers-website" target='_blank'>
-                          <FaGithub className="text-4xl group-hover:text-gg transition-all duration-300 text-ff mx-auto" />
-                        </a>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <Paragraph pText="Source Code" className="bg-white text-black px-8 py-3 rounded-xl text-[20px] font-pap font-semibold mb-5" />
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Flex>
-              </div>
-
-              {/* Green Div */}
-              <div className="w-full md:w-[50%] h-[450px]  mt-10 md:mt-0">
-                {/* Vertical content inside */}
-                <div className="h-full flex flex-col justify-center items-center">
-                  <Image imgSrc={slider2} className={'w-full h-full rounded-xl'} />
+                {/* Image Div */}
+                <div className="w-full md:w-[50%] h-[450px] mt-10 md:mt-0">
+                  <div className="h-full flex flex-col justify-center items-center">
+                    <Image imgSrc={project.image} className="w-full h-full rounded-xl" />
+                  </div>
                 </div>
-              </div>
-            </Flex>
-          </div>
-          {/* Slider 3 */}
-          <div
-            className="min-w-[100%] bg-blackbg p-4 rounded-lg transition-transform"
-            style={{ scrollSnapAlign: 'start' }}
-          >
-            <Flex
-              className={`justify-between flex-wrap ${isSmallScreen ? 'flex-col-reverse' : 'flex-row'}`}
-            >
-              <div className="w-full md:w-[40%]">
-                <Paragraph
-                  pText="03"
-                  className="font-cha font-bold text-[50px] service-stroked-text leading-[80px] text-transparent group-hover:text-hover"
-                />
-                <Heading headingName="E-Commerse with React" className="font-ops font-bold text-ff hover:text-gg text-[30px] sm:text-[40px] leading-[40px]" />
-                <Paragraph
-                  pText="Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices."
-                  className="font-pap text-ff text-[16px] leading-[40px] mt-5"
-                />
-                <Paragraph pText="Vite.js, Tailwind Css." className="font-pap text-gg text-[16px] leading-[40px] pb-5 border-b-2 border-b-ff" />
-
-                <Flex className="mt-5">
-                  <TooltipProvider delayDuration={20}>
-                    <Tooltip>
-                      <TooltipTrigger className="h-[60px] w-[60px] bg-cc rounded-full group">
-                        <a href="https://infomdkamruzzaman.github.io/Agenc_website/" target='_blank'>
-                          <BsArrowDownRight className="text-4xl group-hover:text-gg transition-all duration-300 text-ff mx-auto group-hover:-rotate-90" />
-                        </a>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <Paragraph pText="Live Project" className="bg-white text-black px-8 py-3 rounded-xl text-[20px] font-pap font-semibold mb-5" />
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-
-                  <TooltipProvider delayDuration={20}>
-                    <Tooltip>
-                      <TooltipTrigger className="h-[60px] w-[60px] bg-cc rounded-full group ml-10">
-                        <a href="https://github.com/infomdkamruzzaman/Agenc_website" target='_blank'>
-                          <FaGithub className="text-4xl group-hover:text-gg transition-all duration-300 text-ff mx-auto" />
-                        </a>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <Paragraph pText="Source code." className="bg-white text-black px-8 py-3 rounded-xl text-[20px] font-pap font-semibold mb-5" />
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Flex>
-              </div>
-
-              {/* Green Div */}
-              <div className="w-full md:w-[50%] h-[450px] mt-10 md:mt-0">
-                {/* Vertical content inside */}
-                <div className="h-full flex flex-col justify-center items-center">
-                  <Image imgSrc={slider3} className={'w-full h-full rounded-xl'} />
-                </div>
-              </div>
-            </Flex>
-          </div>
-          {/* Slider 4 */}
-          <div
-            className="min-w-[100%] bg-blackbg p-4 rounded-lg transition-transform"
-            style={{ scrollSnapAlign: 'start' }}
-          >
-            <Flex
-              className={`justify-between flex-wrap ${isSmallScreen ? 'flex-col-reverse' : 'flex-row'}`}
-            >
-              <div className="w-full md:w-[40%]">
-                <Paragraph
-                  pText="04"
-                  className="font-cha font-bold text-[50px] service-stroked-text leading-[80px] text-transparent group-hover:text-hover"
-                />
-                <Heading headingName="portfolio Project" className="font-ops font-bold text-ff hover:text-gg text-[30px] sm:text-[40px] leading-[40px]" />
-                <Paragraph
-                  pText="Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices."
-                  className="font-pap text-ff text-[16px] leading-[40px] mt-5"
-                />
-                <Paragraph pText="HTML, CSS, Javascript." className="font-pap text-gg text-[16px] leading-[40px] pb-5 border-b-2 border-b-ff" />
-
-                <Flex className="mt-5">
-                  <TooltipProvider delayDuration={20}>
-                    <Tooltip>
-                      <TooltipTrigger className="h-[60px] w-[60px] bg-cc rounded-full group">
-                        <a href="https://infomdkamruzzaman.github.io/My_Portfolio/" target='_blank'>
-                          <BsArrowDownRight className="text-4xl group-hover:text-gg transition-all duration-300 text-ff mx-auto group-hover:-rotate-90" />
-                        </a>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <Paragraph pText="Live Project" className="bg-white text-black px-8 py-3 rounded-xl text-[20px] font-pap font-semibold mb-5" />
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-
-                  <TooltipProvider delayDuration={20}>
-                    <Tooltip>
-                      <TooltipTrigger className="h-[60px] w-[60px] bg-cc rounded-full group ml-10">
-                        <a href="https://github.com/infomdkamruzzaman/My_Portfolio" target='_blank'>
-                          <FaGithub className="text-4xl group-hover:text-gg transition-all duration-300 text-ff mx-auto" />
-                        </a>
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <Paragraph pText="GitHub Projects" className="bg-white text-black px-8 py-3 rounded-xl text-[20px] font-pap font-semibold mb-5" />
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Flex>
-              </div>
-
-              {/* Green Div */}
-              <div className="w-full md:w-[50%] h-[450px] mt-10 md:mt-0">
-                {/* Vertical content inside */}
-                <div className="h-full flex flex-col justify-center items-center">
-                  <Image imgSrc={slider4} className={'w-full h-full rounded-xl'} />
-                </div>
-              </div>
-            </Flex>
-          </div>
-
-          {/* Add more project cards similarly */}
+              </Flex>
+            </div>
+          ))}
         </div>
       </Container>
 
