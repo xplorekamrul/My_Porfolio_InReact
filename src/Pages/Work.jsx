@@ -7,10 +7,12 @@ import { BsArrowDownRight } from "react-icons/bs";
 import { FaGithub, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@radix-ui/react-tooltip';
 import Image from '../Components/Image';
-import slider1 from '../assets/slider content(1).png';
-import slider2 from '../assets/slider content(2).jpg';
-import slider3 from '../assets/slider content(3).png';
-import slider4 from '../assets/slider content(4).png';
+import slider1 from '../assets/paroject_slider (2).png';
+import slider2 from '../assets/paroject_slider (6).png';
+import slider3 from '../assets/paroject_slider (4).png';
+import slider4 from '../assets/paroject_slider (3).png';
+import slider5 from '../assets/paroject_slider (1).png';
+import slider6 from '../assets/paroject_slider (5).png';
 
 // Array of project objects
 const projects = [
@@ -19,36 +21,52 @@ const projects = [
     title: "Frontend Project",
     description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
     technologies: "HTML5, CSS3, JavaScript.",
-    liveLink: "https://infomdkamruzzaman.github.io/furniro-E-website/",
-    githubLink: "https://github.com/infomdkamruzzaman/furniro-E-website",
+    liveLink: "https://xplorekamrul.github.io/mosque-beauty/?#",
+    githubLink: "https://github.com/xplorekamrul/mosque-beauty",
     image: slider1,
   },
   {
     id: "02",
-    title: "E-Commerse Project",
+    title: "BAY Institute ",
     description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
-    technologies: "HTML5, CSS3, JavaScript.",
-    liveLink: "https://infomdkamruzzaman.github.io/E-commers-website/",
-    githubLink: "https://github.com/infomdkamruzzaman/E-commers-website",
+    technologies: "Next.js, Tailwind CSS, ShadCn, googleapis, Framer-Motion , EmailJs",
+    liveLink: "https://birbd.vercel.app/",
+    githubLink: "https://github.com/xplorekamrul",
     image: slider2,
   },
   {
     id: "03",
-    title: "E-Commerse with React",
+    title: "Innovate ",
     description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
-    technologies: "Vite.js, Tailwind Css.",
-    liveLink: "https://infomdkamruzzaman.github.io/Agenc_website/",
-    githubLink: "https://github.com/infomdkamruzzaman/Agenc_website",
+    technologies: "Next.js, TypeScript, Tailwind CSS, ShadCn ",
+    liveLink: "https://innovate-home-ten--green.vercel.app/",
+    githubLink: "https://github.com/xplorekamrul/innovateHomeTen",
     image: slider3,
   },
   {
     id: "04",
     title: "portfolio Project",
     description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
-    technologies: "HTML, CSS, Javascript.",
-    liveLink: "https://infomdkamruzzaman.github.io/My_Portfolio/",
-    githubLink: "https://github.com/infomdkamruzzaman/My_Portfolio",
+    technologies: "Vite.js , Email Js, Framer Motion, React_router",
+    liveLink: "https://infomdkamruzzaman.vercel.app/",
+    githubLink: "https://github.com/xplorekamrul/My_Porfolio_InReact",
     image: slider4,
+  },{
+    id: "05",
+    title: "Frontend Project",
+    description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
+    technologies: "Next.js, Tailwind CSS, ShadCn",
+    liveLink: "https://aianimate.vercel.app/",
+    githubLink: "https://github.com/xplorekamrul/TimerImageView-Typing",
+    image: slider5,
+  },{
+    id: "06",
+    title: "Frontend Project",
+    description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
+    technologies: "Next.js, Tailwind CSS, ShadCn ",
+    liveLink: "https://creative-agency-ten-tau.vercel.app/",
+    githubLink: "https://github.com/xplorekamrul/creative_agency",
+    image: slider6,
   },
 ];
 
