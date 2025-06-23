@@ -151,7 +151,7 @@ class Contact extends Component {
                   onChange={this.handleChange}
                   required
                   className="pt-[10px] w-[95%] lg:w-[97%] h-[100px] pl-[15px] ml-5 mt-5 rounded-lg bg-blackbg custom-placeholder border-2 
-                        border-black text-ff focus:border-gg focus:ring-[1px] focus:ring-gg focus:outline-none focus:ml-0 hover:border-3 hover:border-ff transition-all duration-300 
+                        border-black text-ff focus:border-gg focus:ring-[1px] focus:ring-gg focus:outline-none focus:ml-0 hover:border-3 hover:border-ff transition-all duration-500 
                         focus:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)]"
                 ></textarea>
 
