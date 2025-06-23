@@ -285,7 +285,7 @@ const Resume = () => {
                                             {experience.items.map((item, index) => {
                                                 return (
                                                     <li key={index}
-                                                        className='bg-cc h-[184px] hover:border hover:border-gg hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] py-2 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-3'>
+                                                        className='bg-cc h-[184px]  border border-transparent hover:border hover:border-gg hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] transition-all duration-500 ease-in-out  py-2 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-3'>
                                                         <span className='font-ops  text-[16px] leading-[35px]  text-gg'>
                                                             {item.duration}</span>
                                                         <Heading headingName={item.Position}
@@ -314,7 +314,7 @@ const Resume = () => {
                                             {education.items.map((item, index) => {
                                                 return (
                                                     <li key={index}
-                                                        className='bg-cc h-[184px] hover:border hover:border-gg hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] py-2 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-3'>
+                                                        className='bg-cc h-[184px]  border border-transparent hover:border hover:border-gg hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] transition-all duration-500 ease-in-out  py-2 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-3'>
                                                         <span className='font-ops  text-[16px] leading-[35px]  text-gg'>
                                                             {item.duration}</span>
                                                         <Heading headingName={item.degree}
@@ -342,19 +342,34 @@ const Resume = () => {
                                         <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-[30px]'>
                                             {skills.item.map((item, index) => {
                                                 return (
-                                                    <li key={index}
-                                                        className='bg-cc hover:border hover:border-gg hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)]  py-10 px-10 rounded-xl flex flex-col justify-center items-center group '>
-                                                        <TooltipProvider delayDuration={20}>
-                                                            <Tooltip>
-                                                                <TooltipTrigger className=''>
-                                                                    <div className='text-6xl group-hover:text-gg transition-all duration-300 '>{item.icon}</div>
-                                                                </TooltipTrigger>
-                                                                <TooltipContent>
-                                                                    <Paragraph pText={item.Name} className={'bg-white text-black px-8 py-3 rounded-xl text-[20px] font-pap font-semibold mb-8 '} />
-                                                                </TooltipContent>
-                                                            </Tooltip>
-                                                        </TooltipProvider>
-                                                    </li>
+                                                    <TooltipProvider delayDuration={20}>
+                                                        <Tooltip>
+                                                            <TooltipTrigger asChild>
+                                                                <li
+                                                                    key={index}
+                                                                    className='
+          bg-cc py-10 px-10 rounded-xl 
+          flex flex-col justify-center items-center group 
+          border border-transparent 
+          hover:border hover:border-gg 
+          hover:shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] 
+          transition-all duration-500 ease-in-out
+        '
+                                                                >
+                                                                    <div className='text-6xl group-hover:text-gg transition-all duration-300'>
+                                                                        {item.icon}
+                                                                    </div>
+                                                                </li>
+                                                            </TooltipTrigger>
+                                                            <TooltipContent>
+                                                                <Paragraph
+                                                                    pText={item.Name}
+                                                                    className='bg-white text-black px-8 py-3 rounded-xl text-[20px] font-pap font-semibold mb-8'
+                                                                />
+                                                            </TooltipContent>
+                                                        </Tooltip>
+                                                    </TooltipProvider>
+
                                                 );
                                             })}
                                         </ul>
