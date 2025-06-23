@@ -194,7 +194,7 @@ const Work = () => {
                 </div>
 
                 {/* Image Div */}
-                <div className="w-full md:w-[50%] h-[450px] mt-10 md:mt-0">
+                <div className="w-full md:w-[50%] h-[280px] lg:h-[450px] mt-10 md:mt-0">
                   <div className="h-full flex flex-col justify-center items-center">
                     <Image imgSrc={project.image} className="w-full h-full rounded-xl" />
                   </div>
