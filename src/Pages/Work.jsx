@@ -7,68 +7,112 @@ import { BsArrowDownRight } from "react-icons/bs";
 import { FaGithub, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@radix-ui/react-tooltip';
 import Image from '../Components/Image';
-import slider1 from '../assets/paroject_slider (2).png';
-import slider2 from '../assets/paroject_slider (6).png';
-import slider3 from '../assets/paroject_slider (4).png';
-import slider4 from '../assets/paroject_slider (3).png';
-import slider5 from '../assets/paroject_slider (1).png';
-import slider6 from '../assets/paroject_slider (5).png';
+import slider1 from '/sliders (5).png';
+import slider2 from '/sliders (1).png';
+import slider3 from '/sliders (4).png';
+import slider4 from '/sliders (3).png';
+import slider5 from '../assets/paroject_slider (2).png';
+import slider6 from '../assets/paroject_slider (6).png';
+import slider7 from '../assets/paroject_slider (4).png';
+import slider8 from '../assets/paroject_slider (3).png';
+import slider9 from '../assets/paroject_slider (1).png';
+import slider10 from '../assets/paroject_slider (5).png';
 
 // Array of project objects
 const projects = [
   {
     id: "01",
-    title: "Frontend Project",
-    description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
-    technologies: "HTML5, CSS3, JavaScript.",
-    liveLink: "https://xplorekamrul.github.io/mosque-beauty/?#",
-    githubLink: "https://github.com/xplorekamrul/mosque-beauty",
+    title: "Courior Management System",
+    description: "Developing a complete parcel tracking and courier management system with role-based dashboards, real-time updates, and secure data handling.",
+    technologies: "Next.js, Tailwind CSS, ShadCn, MongoDB, Socket.IO, etc.",
+    liveLink: "https://courier-pro-self.vercel.app/",
+    githubLink: "https://github.com/xplorekamrul",
     image: slider1,
   },
   {
     id: "02",
-    title: "BAY Institute ",
-    description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
-    technologies: "Next.js, Tailwind CSS, ShadCn, googleapis, Framer-Motion , EmailJs",
-    liveLink: "https://birbd.vercel.app/",
-    githubLink: "https://github.com/xplorekamrul",
+    title: "BIRL E-commerce Platform",
+    description: "Creating a scalable e-commerce platform with product catalogs, cart, checkout, and secure payment gateway integration.",
+    technologies: "Next.js, Tailwind CSS, ShadCn, MongoDb, Zustand, etc.",
+    liveLink: "https://birl-ecom.vercel.app/",
+    githubLink: "https://github.com/xplorekamrul/",
     image: slider2,
   },
   {
     id: "03",
-    title: "Innovate ",
-    description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
-    technologies: "Next.js, TypeScript, Tailwind CSS, ShadCn ",
-    liveLink: "https://innovate-home-ten--green.vercel.app/",
-    githubLink: "https://github.com/xplorekamrul/innovateHomeTen",
+    title: "Rich Text Editor",
+    description: "Building a customizable text editor with formatting, media embedding, and live content preview features.",
+    technologies: "Next.js, Tailwind CSS, ShadCn, Tiptap, Zustand, etc.",
+    liveLink: "https://editorbyxplorekamrul.vercel.app/",
+    githubLink: "https://github.com/xplorekamrul/micro-editor",
     image: slider3,
   },
   {
     id: "04",
-    title: "portfolio Project",
-    description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
-    technologies: "Vite.js , Email Js, Framer Motion, React_router",
+    title: "Web Video Player",
+    description: "Designing an advanced web-based video player with custom controls, playlists, and responsive streaming.",
+    technologies: "Next.js, Tailwind CSS, ShadCn, Zod, Zustand, etc.",
+    liveLink: "https://video-player-gold.vercel.app/",
+    githubLink: "https://github.com/xplorekamrul/video-player",
+    image: slider4,
+  },
+  {
+    id: "05",
+    title: "BAY Institute",
+    description: "Creating an educational institute website with course listings, contact forms, and animated interactions.",
+    technologies: "Next.js, Tailwind CSS, ShadCn, Google APIs, Framer Motion, EmailJS,, etc.",
+    liveLink: "https://birbd.vercel.app/",
+    githubLink: "https://github.com/xplorekamrul",
+    image: slider6,
+  },
+  {
+    id: "06",
+    title: "Mosque Beauty Website",
+    description: "Developing a static showcase website for a mosque with events, gallery, and donation information.",
+    technologies: "HTML5, CSS3, JavaScript, etc.",
+    liveLink: "https://xplorekamrul.github.io/mosque-beauty/?#",
+    githubLink: "https://github.com/xplorekamrul/mosque-beauty",
+    image: slider5,
+  },
+  
+  {
+    id: "08",
+    title: "Portfolio Project",
+    description: "Developing a personal portfolio website to showcase skills, projects, and achievements with animations.",
+    technologies: "Vite.js, EmailJS, Framer Motion, React Router",
     liveLink: "https://infomdkamruzzaman.vercel.app/",
     githubLink: "https://github.com/xplorekamrul/My_Porfolio_InReact",
-    image: slider4,
-  },{
-    id: "05",
-    title: "Frontend Project",
-    description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
+    image: slider8,
+  },
+  {
+    id: "08",
+    title: "Frontend Project - AI Animate",
+    description: "Creating an interactive frontend app with animated text, AI-based features, and image display.",
     technologies: "Next.js, Tailwind CSS, ShadCn",
     liveLink: "https://aianimate.vercel.app/",
     githubLink: "https://github.com/xplorekamrul/TimerImageView-Typing",
-    image: slider5,
-  },{
-    id: "06",
-    title: "Frontend Project",
-    description: "Building dynamic, responsive websites using modern tools and technologies, ensuring functionality, performance, and seamless user experiences across all devices.",
-    technologies: "Next.js, Tailwind CSS, ShadCn ",
+    image: slider9,
+  },
+  {
+    id: "09",
+    title: "Frontend Project - Creative Agency",
+    description: "Designing a creative agency website with service showcases, portfolio, and responsive layouts.",
+    technologies: "Next.js, Tailwind CSS, ShadCn",
     liveLink: "https://creative-agency-ten-tau.vercel.app/",
     githubLink: "https://github.com/xplorekamrul/creative_agency",
-    image: slider6,
+    image: slider10,
+  },
+  {
+    id: "10",
+    title: "Innovate",
+    description: "Building a business-focused landing page with modern UI components and clean, professional layouts.",
+    technologies: "Next.js, TypeScript, Tailwind CSS, ShadCn",
+    liveLink: "https://innovate-home-ten--green.vercel.app/",
+    githubLink: "https://github.com/xplorekamrul/innovateHomeTen",
+    image: slider7,
   },
 ];
+
 
 const Work = () => {
   const scrollerRef = useRef(null);
