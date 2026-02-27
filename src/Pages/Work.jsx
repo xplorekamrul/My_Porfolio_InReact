@@ -7,109 +7,171 @@ import { BsArrowDownRight } from "react-icons/bs";
 import { FaGithub, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@radix-ui/react-tooltip';
 import Image from '../Components/Image';
-import slider1 from '/sliders (5).png';
-import slider2 from '/sliders (1).png';
-import slider3 from '/sliders (4).png';
-import slider4 from '/sliders (3).png';
-import slider5 from '../assets/paroject_slider (2).png';
-import slider6 from '../assets/paroject_slider (6).png';
-import slider7 from '../assets/paroject_slider (4).png';
-import slider8 from '../assets/paroject_slider (3).png';
-import slider9 from '../assets/paroject_slider (1).png';
-import slider10 from '../assets/paroject_slider (5).png';
+import slider1 from '../assets/portfolio-showcase (6).png';
+import slider2 from '../assets/portfolio-showcase (1).jpeg';
+import slider3 from '../assets/portfolio-showcase (4).png';
+import slider4 from '../assets/portfolio-showcase (5).png';
+import slider5 from '../assets/portfolio-showcase (2).png';
+import slider6 from '../assets/portfolio-showcase (2).png';
+import slider7 from '../assets/portfolio-showcase (7).png';
+import slider8 from '/sliders (5).png';
+import slider9 from '/sliders (1).png';
+import slider10 from '/sliders (4).png';
+import slider11 from '/sliders (3).png';
+import slider12 from '../assets/paroject_slider (2).png';
+import slider13 from '../assets/paroject_slider (6).png';
+import slider14 from '../assets/paroject_slider (4).png';
+import slider15 from '../assets/paroject_slider (3).png';
+import slider16 from '../assets/paroject_slider (1).png';
+import slider17 from '../assets/paroject_slider (5).png';
 
 // Array of project objects
 const projects = [
   {
-    id: "01",
-    title: "Courior Management System",
-    description: "Developing a complete parcel tracking and courier management system with role-based dashboards, real-time updates, and secure data handling.",
-    technologies: "Next.js, Tailwind CSS, ShadCn, MongoDB, Socket.IO, etc.",
-    liveLink: "https://courier-pro-self.vercel.app/",
-    githubLink: "https://github.com/xplorekamrul",
-    image: slider1,
+    "id": "01",
+    "title": "School Management Web App",
+    "description": "A comprehensive full-cycle educational platform featuring virtual classrooms, automated student promotion, and a built-in chatbot, while managing complex roles for students, parents, and teachers with integrated payment systems.",
+    "technologies": "Next.js, Socket.io, Livekit, Prisma, PostgreSQL, TypeScript",
+    "liveLink": "https://birbd.org/",
+    "githubLink": "https://github.com/xplorekamrul",
+    "image": slider1
   },
   {
-    id: "02",
+    "id": "02",
+    "title": "HR Management System",
+    "description": "An enterprise-grade solution focused on employee lifecycle management, featuring hardware-integrated attendance tracking, shift calculation, and automated report generation for PDF and Excel formats using specialized libraries.",
+    "technologies": "Next.js, Prisma ORM, MySQL, TypeScript, Next-Auth, Server-action",
+    "liveLink": "https://hris.museafoods.com/",
+    "githubLink": "https://github.com/xplorekamrul",
+    "image": slider2
+  },
+  {
+    "id": "03",
+    "title": "Obokash.com Travel Agency",
+    "description": "A specialized travel management platform handling complex data for tours, visas, and flights across multiple countries, featuring administrative IP blocking and section-based data feeding for optimized user experiences.",
+    "technologies": "Next.js, Prisma ORM, MySQL, TypeScript, Next-Auth, Zod",
+    "liveLink": "https://work.obokash.com/",
+    "githubLink": "https://github.com/xplorekamrul",
+    "image": slider3
+  },
+  {
+    "id": "04",
+    "title": "Dynamic School Website",
+    "description": "A multi-tenant architecture designed to support the creation and management of multiple school websites simultaneously, utilizing domain-dependent data fetching and institute-specific administrative controls from a single project.",
+    "technologies": "Next.js, Prisma ORM, PostgreSql, TypeScript, Next-Auth, Zod",
+    "liveLink": "https://www.daulatpurmuhsingirls.edu.bd/",
+    "githubLink": "https://github.com/xplorekamrul",
+    "image": slider4
+  },
+  {
+    "id": "05",
+    "title": "Courier Management System",
+    "description": "A real-time logistics dashboard providing live tracking via Google Maps, route optimization, and automated invoicing with jsPDF, successfully resolving complex state conflicts and notification synchronization for dispatch teams.",
+    "technologies": "Next.js, TypeScript, Web Socket, Google Maps, Zod, MongoDb",
+    "liveLink": "https://courier-pro-self.vercel.app/",
+    "githubLink": "https://github.com/xplorekamrul",
+    "image": slider8
+  },
+  {
+    "id": "06",
+    "title": "Matrimonial Site - ighotok.com",
+    "description": "A full-stack matchmaking application featuring customizable search filters, a proposal exchange system between users, and unique matching percentage algorithms backed by a secure Supabase and PostgreSQL database architecture.",
+    "technologies": "Next.js, TypeScript, Shadcn, Prisma, PostgreSQL, Supabase, Zustand",
+    "liveLink": "https://www.ighotok.com",
+    "githubLink": "https://github.com/xplorekamrul",
+    "image": slider6
+  },
+  {
+    "id": "07",
+    "title": "RareviewIt.com",
+    "description": "Rareviewit.com delivers full-stack web development, strategic SEO, and UI/UX design, leveraging modern tech to build scalable platforms that enhance brand visibility and drive growth.",
+    "technologies": "Next.js, Prisma ORM, PostgreSql, TypeScript, Next-Auth, Server-action",
+    "liveLink": "https://www.rareviewit.com/",
+    "githubLink": "https://github.com/xplorekamrul",
+    "image": slider7
+  },
+ 
+  {
+    id: "09",
     title: "BIRL E-commerce Platform",
     description: "Creating a scalable e-commerce platform with product catalogs, cart, checkout, and secure payment gateway integration.",
     technologies: "Next.js, Tailwind CSS, ShadCn, MongoDb, Zustand, etc.",
-    liveLink: "https://birl-ecom.vercel.app/",
+    liveLink: "https://birlecom.vercel.app/",
     githubLink: "https://github.com/xplorekamrul/",
-    image: slider2,
+    image: slider9,
   },
   {
-    id: "03",
+    id: "10",
     title: "Rich Text Editor",
     description: "Building a customizable text editor with formatting, media embedding, and live content preview features.",
     technologies: "Next.js, Tailwind CSS, ShadCn, Tiptap, Zustand, etc.",
     liveLink: "https://editorbyxplorekamrul.vercel.app/",
     githubLink: "https://github.com/xplorekamrul/micro-editor",
-    image: slider3,
+    image: slider10,
   },
   {
-    id: "04",
+    id: "11",
     title: "Web Video Player",
     description: "Designing an advanced web-based video player with custom controls, playlists, and responsive streaming.",
     technologies: "Next.js, Tailwind CSS, ShadCn, Zod, Zustand, etc.",
     liveLink: "https://video-player-gold.vercel.app/",
     githubLink: "https://github.com/xplorekamrul/video-player",
-    image: slider4,
+    image: slider11,
   },
   {
-    id: "05",
+    id: "12",
     title: "BAY Institute",
     description: "Creating an educational institute website with course listings, contact forms, and animated interactions.",
     technologies: "Next.js, Tailwind CSS, ShadCn, Google APIs, Framer Motion, EmailJS,, etc.",
     liveLink: "https://birbd.vercel.app/",
     githubLink: "https://github.com/xplorekamrul",
-    image: slider6,
+    image: slider13,
   },
   {
-    id: "06",
+    id: "13",
     title: "Mosque Beauty Website",
     description: "Developing a static showcase website for a mosque with events, gallery, and donation information.",
     technologies: "HTML5, CSS3, JavaScript, etc.",
     liveLink: "https://xplorekamrul.github.io/mosque-beauty/?#",
     githubLink: "https://github.com/xplorekamrul/mosque-beauty",
-    image: slider5,
+    image: slider12,
   },
   
   {
-    id: "08",
+    id: "14",
     title: "Portfolio Project",
     description: "Developing a personal portfolio website to showcase skills, projects, and achievements with animations.",
     technologies: "Vite.js, EmailJS, Framer Motion, React Router",
     liveLink: "https://infomdkamruzzaman.vercel.app/",
     githubLink: "https://github.com/xplorekamrul/My_Porfolio_InReact",
-    image: slider8,
+    image: slider15,
   },
   {
-    id: "08",
+    id: "15",
     title: "Frontend Project - AI Animate",
     description: "Creating an interactive frontend app with animated text, AI-based features, and image display.",
     technologies: "Next.js, Tailwind CSS, ShadCn",
     liveLink: "https://aianimate.vercel.app/",
     githubLink: "https://github.com/xplorekamrul/TimerImageView-Typing",
-    image: slider9,
+    image: slider17,
   },
   {
-    id: "09",
+    id: "16",
     title: "Frontend Project - Creative Agency",
     description: "Designing a creative agency website with service showcases, portfolio, and responsive layouts.",
     technologies: "Next.js, Tailwind CSS, ShadCn",
     liveLink: "https://creative-agency-ten-tau.vercel.app/",
     githubLink: "https://github.com/xplorekamrul/creative_agency",
-    image: slider10,
+    image: slider16,
   },
   {
-    id: "10",
+    id: "17",
     title: "Innovate",
     description: "Building a business-focused landing page with modern UI components and clean, professional layouts.",
     technologies: "Next.js, TypeScript, Tailwind CSS, ShadCn",
     liveLink: "https://innovate-home-ten--green.vercel.app/",
     githubLink: "https://github.com/xplorekamrul/innovateHomeTen",
-    image: slider7,
+    image: slider14,
   },
 ];
 
