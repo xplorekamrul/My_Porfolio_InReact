@@ -1,29 +1,28 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Container } from '../Components/Container';
-import Heading from '../Components/Heading';
-import Flex from '../Components/Flex';
-import Paragraph from '../Components/Paragraph';
-import { BsArrowDownRight } from "react-icons/bs";
-import { FaGithub, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@radix-ui/react-tooltip';
+import { useEffect, useRef, useState } from 'react';
+import { BsArrowDownRight } from "react-icons/bs";
+import { FaChevronLeft, FaChevronRight, FaGithub } from "react-icons/fa";
+import { Container } from '../Components/Container';
+import Flex from '../Components/Flex';
+import Heading from '../Components/Heading';
 import Image from '../Components/Image';
-import slider1 from '../assets/portfolio-showcase (6).png';
+import Paragraph from '../Components/Paragraph';
+import slider16 from '../assets/paroject_slider (1).png';
+import slider12 from '../assets/paroject_slider (2).png';
+import slider15 from '../assets/paroject_slider (3).png';
+import slider14 from '../assets/paroject_slider (4).png';
+import slider17 from '../assets/paroject_slider (5).png';
+import slider13 from '../assets/paroject_slider (6).png';
 import slider2 from '../assets/portfolio-showcase (1).jpeg';
+import slider6 from '../assets/portfolio-showcase (2).png';
 import slider3 from '../assets/portfolio-showcase (4).png';
 import slider4 from '../assets/portfolio-showcase (5).png';
-import slider5 from '../assets/portfolio-showcase (2).png';
-import slider6 from '../assets/portfolio-showcase (2).png';
+import slider1 from '../assets/portfolio-showcase (6).png';
 import slider7 from '../assets/portfolio-showcase (7).png';
-import slider8 from '/sliders (5).png';
 import slider9 from '/sliders (1).png';
-import slider10 from '/sliders (4).png';
 import slider11 from '/sliders (3).png';
-import slider12 from '../assets/paroject_slider (2).png';
-import slider13 from '../assets/paroject_slider (6).png';
-import slider14 from '../assets/paroject_slider (4).png';
-import slider15 from '../assets/paroject_slider (3).png';
-import slider16 from '../assets/paroject_slider (1).png';
-import slider17 from '../assets/paroject_slider (5).png';
+import slider10 from '/sliders (4).png';
+import slider8 from '/sliders (5).png';
 
 // Array of project objects
 const projects = [
@@ -300,9 +299,9 @@ const Work = () => {
                 </div>
 
                 {/* Image Div */}
-                <div className="w-full md:w-[50%] h-[280px] lg:h-[450px] mt-10 md:mt-0">
-                  <div className="h-full flex flex-col justify-center items-center">
-                    <Image imgSrc={project.image} className="w-full h-full rounded-xl" />
+                <div className="w-full md:w-[50%] mt-10 md:mt-0">
+                  <div className="w-full aspect-video flex flex-col justify-center items-center">
+                    <Image imgSrc={project.image} className="w-full h-full object-cover rounded-xl" />
                   </div>
                 </div>
               </Flex>
